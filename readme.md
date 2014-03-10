@@ -16,22 +16,24 @@ It just keeps a map of all the keys and whether they were last pressed or releas
 
 Just add a KeyMap where you want to be able to poll keys.
 
-    Rectangle {
-        focus: true
-        KeyMap{ //this objects keeps track of the keys
-            id: keyMap
-        }
-        //the keymap still need key events to update the map, so let's forward them
-        Keys.forwardTo(keyMap);
-        
-        //lets test that it actually works
-        Timer {
-            running: true; repeat: true
-            interval: 200
-            onTriggered: {
-                console.log("Left key is held down:", keyMap.isKeyDown(Qt.Key_Left));
-            }
+```qml
+Rectangle {
+    focus: true
+    KeyMap{ //this objects keeps track of the keys
+        id: keyMap
+    }
+    //the keymap still need key events to update the map, so let's forward them
+    Keys.forwardTo(keyMap);
+    
+    //lets test that it actually works
+    Timer {
+        running: true; repeat: true
+        interval: 200
+        onTriggered: {
+            console.log("Left key is held down:", keyMap.isKeyDown(Qt.Key_Left));
         }
     }
+}
+```
 
 If you set it up in this way, the map will also respect the keyboard focus rules of qml.
