@@ -1,6 +1,6 @@
 # QML PollKey
 
-A simple way of supporting polling of keyboard keys with qml.
+A simple way of supporting polling of keyboard keys with QML.
 
 ## Motivation
 
@@ -17,7 +17,8 @@ It just keeps a map of all the keys and whether they were last pressed or releas
 Just add a KeyMap where you want to be able to poll keys.
 
     Rectangle {
-        KeyMap{ //this objects keeps track of the key
+        focus: true
+        KeyMap{ //this objects keeps track of the keys
             id: keyMap
         }
         //the keymap still need key events to update the map, so let's forward them
