@@ -1,7 +1,6 @@
 import QtQuick 2.2
 
 Item{
-    id: keyMap
     property var keys: ({})
     Keys.onPressed: {
         keys[event.key] = true;
