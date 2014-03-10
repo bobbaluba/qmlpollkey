@@ -19,7 +19,7 @@ Just add a KeyMap where you want to be able to poll keys.
 ```qml
 Rectangle {
     focus: true
-    KeyMap{ //this objects keeps track of the keys
+    KeyMap { //this objects keeps track of the keys
         id: keyMap
     }
     //the keymap still need key events to update the map, so let's forward them
